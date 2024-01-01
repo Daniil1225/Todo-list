@@ -81,10 +81,12 @@ body{
   height: 100vh;
 }
 .container{
-  height: 100%;
-  width: 100vw;
+  height: 100vh;
+  min-height: 720px;
+  max-width: 100vw;
   background-image: linear-gradient(to right bottom, rgba(59, 163, 149, 0.8), rgba(117, 216, 213, 0.9)),url(images/wood-bg.jpg);
   background-size: contain;
+  display: flex;
 }
 .main{
   display: grid;
@@ -96,6 +98,7 @@ body{
   height: 720px;
   vertical-align: middle;
   margin: 0 auto;
+  margin-top: 10vh;
 }
 
 
