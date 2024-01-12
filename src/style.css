@@ -213,3 +213,8 @@ body{
 .popup__sidebar{
   background-color: #EEEEEE;
 }
+.sidebar__list-popup{
+}
+.list__element-popup{
+  padding-bottom: 100px;
+}
