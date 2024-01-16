@@ -1,56 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="../dist/main.js" defer></script>
-  <title>Document</title>
-</head>
-<body>
-  <div class="container">
-    <main class="main">
-      <div class="main__header">
-        <img src="images/logo.png" alt="logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../dist/main.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <main class="main">
+        <div class="main__header">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <div class="main__sidebar">
+          <nav class="sidebar__nav">
+            <ul class="sidebar__list">
+              <li class="list__element home hover chosen">
+                <span class="slash">// </span>Home<span
+                  class="home-count count"
+                ></span>
+              </li>
+              <li class="list__element today hover">
+                <span class="slash">// </span>Today<span
+                  class="today-count count"
+                ></span>
+              </li>
+              <li class="list__element week hover">
+                <span class="slash">// </span>Week<span
+                  class="week-count count"
+                ></span>
+              </li>
+              <li class="list__element projects cursor">
+                Projects
+                <span class="projects-count count"></span>
+                <ul class="projects__elements"></ul>
+              </li>
+              <li class="list__element notes hover">
+                <span class="slash">// </span>Notes<span
+                  class="notes-count count"
+                ></span>
+              </li>
+            </ul>
+            <button class="button-add">+</button>
+          </nav>
+        </div>
+        <div class="main__content"></div>
+      </main>
+    </div>
+    <div class="hide invisible"></div>
+    <div class="popup invisible">
+      <div class="popup__header">
+        <h2 class="popup__title">Create a new...</h2>
+        <span class="popup__close">X</span>
       </div>
-      <div class="main__sidebar">
-        <nav class="sidebar__nav">
-          <ul class="sidebar__list">
-            <li class="list__element home">Home<span class="home-count count"></span></li>
-            <li class="list__element today">Today<span class="today-count count"></span></li>
-            <li class="list__element week">Week<span class="week-count count"></span></li>
-            <li class="list__element projects">
-              Projects
-              <span class="projects-count count"></span>
-              <ul class="projects__elements">
-                
-              </ul>
+      <div class="popup__sidebar">
+        <nav class="sidebar__nav-popup">
+          <ul class="sidebar__list-popup">
+            <li class="list__element-popup to-do hover chosen">
+              <span class="slash">// </span>To Do
             </li>
-            <li class="list__element notes">Notes<span class="notes-count count"></span></li>
+            <li class="list__element-popup project hover">
+              <span class="slash">// </span>Project
+            </li>
+            <li class="list__element-popup note hover">
+              <span class="slash">// </span>Note
+            </li>
           </ul>
-          <button class="button-add">+</button>
         </nav>
       </div>
-      <div class="main__content"></div>
-    </main>
-  </div>
-  <div class="popup invisible">
-    <div class="popup__header">
-      <h2 class="popup__title">Create a new...</h2>
-      <span class="popup__close">X</span>
-    </div> 
-    <div class="popup__sidebar">
-      <nav class="sidebar__nav-popup">
-        <ul class="sidebar__list-popup">
-          <li class="list__element-popup to-do">To Do</li>
-          <li class="list__element-popup project">Project</li>
-          <li class="list__element-popup note">Note</li>
-        </ul>
-      </nav>
-    </div> 
-    <div class="popup__content">
-      
-    </div> 
-  </div>
-</body>
+      <div class="popup__content">
+        <div class="content__ToDo">
+          <form action="" class="popup__content__form">
+            <div class="ToDo__text">
+              <input
+                type="text"
+                class="text__title"
+                placeholder="Title: Pay bills"
+                required
+              />
+              <textarea
+                name=""
+                class="text__area"
+                cols="30"
+                rows="10"
+                placeholder="Details: e.g internet, phone, rent."
+                required
+              ></textarea>
+            </div>
+            <div class="ToDo__inputs">
+              <label for="" class="inputs__date">Due date:</label>
+              <input type="date" required />
+              <div class="inputs__footer">
+                <label class="inputs__date">Priority:</label>
+                <input type="radio" name="priority" value="easy" />
+                <input type="radio" name="priority" value="medium" />
+                <input type="radio" name="priority" value="high" />
+              </div>
+              <button type="submit">Add to do</button>
+            </div>
+          </form>
+        </div>
+        <div class="content__Project"></div>
+        <div class="content__Note"></div>
+      </div>
+    </div>
+  </body>
 </html>
