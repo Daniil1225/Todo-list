@@ -4,10 +4,6 @@ const popUp = document.querySelector(".popup")
 const hideDiv = document.querySelector(".hide")
 const container = document.querySelector(".container")
 
-const listNavbarMain = document.querySelectorAll(".list__element")
-const listNavbarPopup = document.querySelectorAll(".list__element-popup")
-const hoverListItems = document.querySelectorAll(".hover")
-
 //Open popup
 buttonOpenPopup.onclick = () => {
   popUp.classList.remove("invisible")
@@ -20,6 +16,13 @@ buttonClosePopup.onclick = () => {
   hideDiv.classList.add("invisible")
   container.classList.remove("blur")
 }
+
+
+
+
+const listNavbarMain = document.querySelectorAll(".list__element")
+const listNavbarPopup = document.querySelectorAll(".list__element-popup")
+const hoverListItems = document.querySelectorAll(".hover")
 
 //Check if main navbar element was clicked. Add click animation.
 listNavbarMain.forEach((element, index) => {
