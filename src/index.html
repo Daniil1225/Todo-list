@@ -89,15 +89,40 @@
               ></textarea>
             </div>
             <div class="ToDo__inputs">
-              <label for="" class="inputs__date">Due date:</label>
-              <input type="date" required />
-              <div class="inputs__footer">
-                <label class="inputs__date">Priority:</label>
-                <input type="radio" name="priority" value="easy" />
-                <input type="radio" name="priority" value="medium" />
-                <input type="radio" name="priority" value="high" />
+              <div class="inputs__date-group">
+                <label for="" class="inputs__date">Due date:</label>
+                <input type="date" required class="date" />
               </div>
-              <button type="submit">Add to do</button>
+              <div class="inputs__footer">
+                <div class="footer_radio">
+                  <label class="inputs__priority">Priority:</label>
+                  <input
+                    type="radio"
+                    name="priority"
+                    value="easy"
+                    class="priority invisible"
+                    id="easy"
+                  />
+                  <label for="easy">Low</label>
+                  <input
+                    type="radio"
+                    name="priority"
+                    value="medium"
+                    class="priority invisible"
+                    id="medium"
+                  />
+                  <label for="medium">Medium</label>
+                  <input
+                    type="radio"
+                    name="priority"
+                    value="high"
+                    class="priority invisible"
+                    id="high"
+                  />
+                  <label for="high">High</label>
+                </div>
+                <button type="submit" class="inputs__submit">Add to do</button>
+              </div>
             </div>
           </form>
         </div>

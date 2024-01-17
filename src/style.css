@@ -289,21 +289,124 @@ body{
 
 .popup__content{
   background-color: #f7f7f7;
+  padding: 3% 3%;
   grid-area: 2/2/3/6;
 }
 
-
-
 /*******************************************************************************************************************/
 
+.content__ToDo{
+  height: 100%;
+}
+.popup__content__form{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-
+}
 .ToDo__text{
-  
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
+}
+.text__title{
+  border: none;
+  background-color: transparent;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #a1a1a1;
+  margin-bottom: 3%;
 }
 .text__area{
   resize: none;
   border: none;
   background-color: transparent;
+  font-size: 1.25rem;
+  font-weight: 300;
   color: #a1a1a1;
+}
+.inputs__date-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
+.inputs__date{
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-right: 2%;
+}
+.date{
+  align-self: center;
+  border: #3ba395 1px solid;
+  border-radius: 4px;
+  color: #3ba395;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 2% 4%;
+}
+.inputs__footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 1.5%;
+}
+.footer_radio{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inputs__priority{
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.footer_radio label[for]{
+  width: fit-content;
+  padding: 2.5% 4%;
+  text-align: center;
+  font-size: 0.75rem;  
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 2px;
+}
+label[for="easy"]{
+  color: #008000;
+  border: solid 1px #008000;
+  width: 100px;
+}
+label[for="easy"]:hover{
+  background-color: #008000;
+  color: white;
+}
+label[for="medium"]{
+  color: #ffa500;
+  border: solid 1px #ffa500;
+}
+label[for="medium"]:hover{
+  background-color: #ffa500;
+  color: white;
+}
+label[for="high"]{
+  color: #ff0000;
+  border: solid 1px #ff0000;
+}
+label[for="high"]:hover{
+  background-color: #ff0000;
+  color: white; 
+}
+.inputs__submit{
+  border: #4caa9e 1px solid;
+  color: #4caa9e;
+  font-size: 0.85rem;  
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 2px;
+  padding: 0.8% 2%;
+  background-color: transparent;
+}
+.inputs__submit:hover{
+  background-color: #4caa9e;
+  color: white;
 }
