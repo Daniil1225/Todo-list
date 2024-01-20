@@ -4,10 +4,6 @@ const popUp = document.querySelector(".popup")
 const hideDiv = document.querySelector(".hide")
 const container = document.querySelector(".container")
 
-const listNavbarMain = document.querySelectorAll(".list__element")
-const listNavbarPopup = document.querySelectorAll(".list__element-popup")
-const hoverListItems = document.querySelectorAll(".hover")
-
 //Open popup
 buttonOpenPopup.onclick = () => {
   popUp.classList.remove("invisible")
@@ -20,6 +16,11 @@ buttonClosePopup.onclick = () => {
   hideDiv.classList.add("invisible")
   container.classList.remove("blur")
 }
+
+
+
+const listNavbarMain = document.querySelectorAll(".list__element")
+const listNavbarPopup = document.querySelectorAll(".list__element-popup")
 
 //Check if main navbar element was clicked. Add click animation.
 listNavbarMain.forEach((element, index) => {
@@ -43,5 +44,23 @@ listNavbarPopup.forEach((element, index) => {
       }
     })
     this.classList.add("chosen")
+  })
+})
+
+
+
+const listPriorityRadio = document.querySelector(".priority")
+let priorityColor =  rootStyles.getPropertyValue('--background-color-priority')
+
+alert(1)
+listPriorityRadio.forEach((element, index) => {
+  element.addEventListener("click", function() {
+    listPriorityRadio.forEach((element, index) => {
+      if(element.classList.contains("priority-chosen")){
+        element.classList.remove("priority-chosen")
+      }
+    })
+    this.style.setProperty("--background-color-priority", "red")
+    this.classList.add("priority-chosen")
   })
 })

@@ -410,3 +410,8 @@ label[for="high"]:hover{
   background-color: #4caa9e;
   color: white;
 }
+.priority-chosen{
+  --background-color-priority: ;
+  color: white;
+  background-color: var(background-color-priority);
+}
