@@ -1,3 +1,3 @@
-Hello! This is my first github project!
+<h1>Hello! This is my first github project!</h1>
 
-It's a todo list from odin project course.
+<b>It's a todo list from odin project course.</b>
