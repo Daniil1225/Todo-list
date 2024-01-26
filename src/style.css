@@ -181,6 +181,51 @@ body{
 /*******************************************************************************************************************/
 
 
+.main__todo{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+.todo__item:first-child{
+  margin-top: 5%;
+}
+.todo__item{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.todo__text{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.todo__checkbox{
+  padding: 50px;
+}
+fieldset {  
+  border: 3px solid blue;
+}
+.todo__buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.todo__icon{
+  max-width: 25px;
+  cursor: pointer;
+}
+.todo__icon:hover{
+  filter: invert(79%) sepia(17%) saturate(611%) hue-rotate(122deg) brightness(88%) contrast(89%);
+}
+
+
+/*******************************************************************************************************************/
+
+
 .popup{
   position: absolute;
   min-width: 900px;
@@ -412,6 +457,6 @@ label[for="high"]:hover{
 }
 .priority-chosen{
   --background-color-priority: ;
-  color: white;
-  background-color: var(background-color-priority);
+  color: rgb(255, 255, 255) !important;
+  background-color: var(--background-color-priority);
 }

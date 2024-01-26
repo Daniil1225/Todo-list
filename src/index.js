@@ -49,18 +49,72 @@ listNavbarPopup.forEach((element, index) => {
 
 
 
-const listPriorityRadio = document.querySelector(".priority")
-let priorityColor =  rootStyles.getPropertyValue('--background-color-priority')
+const listPriorityRadio = document.querySelectorAll(".priority-label")
+const root = document.querySelector(':root')
+let chosenPriority;
 
-alert(1)
+//Changing radio background color on click 
 listPriorityRadio.forEach((element, index) => {
   element.addEventListener("click", function() {
     listPriorityRadio.forEach((element, index) => {
       if(element.classList.contains("priority-chosen")){
         element.classList.remove("priority-chosen")
       }
+      
     })
-    this.style.setProperty("--background-color-priority", "red")
+    switch(this.getAttribute("for")){
+      case "easy":
+        this.style.setProperty("--background-color-priority", "#008000")
+        chosenPriority = easy;
+      break
+      case "medium":
+        this.style.setProperty("--background-color-priority", "#ffa500")
+        chosenPriority = medium;
+        break
+      case "high":
+        this.style.setProperty("--background-color-priority", "#ff0000")
+        chosenPriority = high;
+        break
+        
+    }
     this.classList.add("priority-chosen")
   })
 })
+
+
+
+const formToDo = document.querySelector("#form-ToDo")
+//If page is new set "indexToDo" to 1
+if(sessionStorage.getItem("reloaded") != "true" && localStorage.getItem("closed") != "true"){
+  localStorage.setItem("indexToDo", "1")
+}
+//If tab was closed set variable "closed" to true
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  this.localStorage.setItem("closed", "true")
+  return true;
+});
+
+//Check when form was submitted
+formToDo.addEventListener("submit", function(e){
+  e.preventDefault()
+
+  const payload = [...new FormData(formToDo)]
+
+  
+  function CreateToDo(){
+    this.title = payload[0][1]
+    this.description = payload[1][1]
+    this.date = payload[2][1]
+    this.priority = payload[3][1]
+  }
+  let todo = new CreateToDo()
+  localStorage.setItem(`todo${Number(localStorage.getItem("indexToDo"))}`, JSON.stringify(todo))
+  let indexToDo = Number(localStorage.getItem("indexToDo"))+1
+  localStorage.setItem("indexToDo", indexToDo.toString())
+  location.reload()
+  sessionStorage.setItem("reloaded", "true")
+})
+
+
+

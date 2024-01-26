@@ -45,7 +45,22 @@
             <button class="button-add">+</button>
           </nav>
         </div>
-        <div class="main__content"></div>
+        <div class="main__content">
+          <div class="main__todo">
+            <div class="todo__item">
+              <div class="todo__text">
+                <input type="checkbox" name="todo__checkbox" class="todo__checkbox">
+                <p class="todo__title">dfdf</p>
+              </div>
+              <div class="todo__buttons">
+                <button class="todo__details">Details</button>
+                <p class="todo__date">today</p>
+                <img src="images/square-edit-outline.png" alt="edit" class="todo__edit todo__icon">
+                <img src="images/trash-can.png" alt="delete" class="todo__delete todo__icon">
+              </div>
+            </div>
+          </div> 
+        </div>
       </main>
     </div>
     <div class="hide invisible"></div>
@@ -71,17 +86,20 @@
       </div>
       <div class="popup__content">
         <div class="content__ToDo">
-          <form action="" class="popup__content__form">
+          <form class="popup__content__form" id="form-ToDo">
             <div class="ToDo__text">
               <input
                 type="text"
+                name="text__title"
                 class="text__title"
+                id="todo__text__title"
                 placeholder="Title: Pay bills"
                 required
               />
               <textarea
-                name=""
+                name="text__area"
                 class="text__area"
+                id="todo__text__area"
                 cols="30"
                 rows="10"
                 placeholder="Details: e.g internet, phone, rent."
@@ -90,8 +108,8 @@
             </div>
             <div class="ToDo__inputs">
               <div class="inputs__date-group">
-                <label for="" class="inputs__date">Due date:</label>
-                <input type="date" required class="date" />
+                <label for="todo__date" class="inputs__date">Due date:</label>
+                <input type="date" required class="date" id="todo__date" name="todo__date"/>
               </div>
               <div class="inputs__footer">
                 <div class="footer_radio">
@@ -103,7 +121,7 @@
                     class="priority invisible"
                     id="easy"
                   />
-                  <label for="easy">Low</label>
+                  <label for="easy" class="priority-label">Low</label>
                   <input
                     type="radio"
                     name="priority"
@@ -111,7 +129,7 @@
                     class="priority invisible"
                     id="medium"
                   />
-                  <label for="medium">Medium</label>
+                  <label for="medium" class="priority-label">Medium</label>
                   <input
                     type="radio"
                     name="priority"
@@ -119,7 +137,7 @@
                     class="priority invisible"
                     id="high"
                   />
-                  <label for="high">High</label>
+                  <label for="high" class="priority-label">High</label>
                 </div>
                 <button type="submit" class="inputs__submit">Add to do</button>
               </div>
