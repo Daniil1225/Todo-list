@@ -115,6 +115,3 @@ formToDo.addEventListener("submit", function(e){
   location.reload()
   sessionStorage.setItem("reloaded", "true")
 })
-
-
-

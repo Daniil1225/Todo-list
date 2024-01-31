@@ -71,7 +71,7 @@ abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
 table{border-collapse:collapse;border-spacing:0}
 hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
 input,select{vertical-align:middle}
-*{font-family: lato, sans-serif;color: #141414;font-size: 1.6rem;font-weight: 300;}
+*{font-family: lato, sans-serif;color: #141414;font-size: 1.6rem;font-weight: 300;box-sizing: border-box;}
 textarea:focus,input:focus{outline: none;}
 
 /*******************************************************************************************************************/
@@ -195,16 +195,22 @@ body{
   width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  background-color: #eeeeee;
+  padding: 0.5% 0;
 }
 .todo__text{
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 0.5%;
+  width: fit-content;
 }
 .todo__checkbox{
   padding: 50px;
+}
+.todo__title{
+  font-size: 1.3rem;
 }
 fieldset {  
   border: 3px solid blue;
@@ -213,13 +219,22 @@ fieldset {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 500px;
+}
+.todo__details{
+  font-size: 0.9rem;
+  color: #3ba395;
+  border: #3ba395 1px solid;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 2.5% 5%;
 }
 .todo__icon{
-  max-width: 25px;
+  width: 25px;
   cursor: pointer;
 }
 .todo__icon:hover{
-  filter: invert(79%) sepia(17%) saturate(611%) hue-rotate(122deg) brightness(88%) contrast(89%);
+  filter: invert(52%) sepia(70%) saturate(347%) hue-rotate(122deg) brightness(92%) contrast(88%);
 }
 
 
