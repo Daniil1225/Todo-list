@@ -192,22 +192,43 @@ body{
   margin-top: 5%;
 }
 .todo__item{
-  width: 90%;
+  width: 92%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   background-color: #eeeeee;
-  padding: 0.5% 0;
+  padding: 1% 1.5%;
 }
 .todo__text{
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 0.5%;
   width: fit-content;
+  width: 8.5%;
+  justify-content: space-between;
 }
 .todo__checkbox{
-  padding: 50px;
+  appearance: none;
+  font: inherit;
+  color: #3ba395;
+  width: 0.7em;
+  height: 0.7em;
+  border: 2px solid #3ba395;
+  border-radius: 3px;
+  display: grid;
+  place-content: center;
+}
+.todo__checkbox::before{
+  content: "";
+  width: 0.6em;
+  height: 0.6em;
+  display: none;
+  box-shadow: inset 1em 1em #3ba395;
+  background-image: url(images/check.png);
+}
+.todo__checkbox:checked::before{
+  display: block;
 }
 .todo__title{
   font-size: 1.3rem;
@@ -219,22 +240,36 @@ fieldset {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 500px;
+  width: 28%;
+  justify-content: space-between;
 }
-.todo__details{
-  font-size: 0.9rem;
+.todo__button{
+  font-size: 0.85rem;
   color: #3ba395;
   border: #3ba395 1px solid;
+  border-radius: 2px;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 2.5% 5%;
+  padding: 7px 11px;
+  transition: 300ms;
+}
+.todo__button:hover{
+  background-color: #3ba395;
+  color: white;
+}
+.todo__date{
+  font-size: 1.1rem;
 }
 .todo__icon{
-  width: 25px;
+  width: 22.5px;
   cursor: pointer;
+  filter: invert(35%) sepia(7%) saturate(1871%) hue-rotate(275deg) brightness(98%) contrast(89%);
 }
 .todo__icon:hover{
   filter: invert(52%) sepia(70%) saturate(347%) hue-rotate(122deg) brightness(92%) contrast(88%);
+}
+.todo__edit{
+  margin-right: -6%;
 }
 
 

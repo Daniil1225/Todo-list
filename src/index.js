@@ -3,6 +3,7 @@ const buttonClosePopup = document.querySelector(".popup__close")
 const popUp = document.querySelector(".popup")
 const hideDiv = document.querySelector(".hide")
 const container = document.querySelector(".container")
+const formToDo = document.querySelector("#form-ToDo")
 
 //Open popup
 buttonOpenPopup.onclick = () => {
@@ -15,6 +16,7 @@ buttonClosePopup.onclick = () => {
   popUp.classList.add("invisible")
   hideDiv.classList.add("invisible")
   container.classList.remove("blur")
+  formToDo.reset()
 }
 
 
@@ -83,7 +85,7 @@ listPriorityRadio.forEach((element, index) => {
 
 
 
-const formToDo = document.querySelector("#form-ToDo")
+
 //If page is new set "indexToDo" to 1
 if(sessionStorage.getItem("reloaded") != "true" && localStorage.getItem("closed") != "true"){
   localStorage.setItem("indexToDo", "1")
