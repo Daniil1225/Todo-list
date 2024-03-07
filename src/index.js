@@ -5,6 +5,12 @@ const hideDiv = document.querySelector(".hide")
 const container = document.querySelector(".container")
 const formToDo = document.querySelector("#form-ToDo")
 
+function ClosePopup(){
+  popUp.classList.add("invisible")
+  hideDiv.classList.add("invisible")
+  container.classList.remove("blur")
+  formToDo.reset()
+}
 //Open popup
 buttonOpenPopup.onclick = () => {
   popUp.classList.remove("invisible")
@@ -12,12 +18,7 @@ buttonOpenPopup.onclick = () => {
   container.classList.add("blur")
 }
 //Close popup
-buttonClosePopup.onclick = () => {
-  popUp.classList.add("invisible")
-  hideDiv.classList.add("invisible")
-  container.classList.remove("blur")
-  formToDo.reset()
-}
+buttonClosePopup.onclick = ClosePopup()
 
 
 
@@ -96,24 +97,23 @@ window.addEventListener('beforeunload', function (e) {
   this.localStorage.setItem("closed", "true")
   return true;
 });
+let mainToDo = document.querySelector('.main__todo')
 
 //Check when form was submitted
 formToDo.addEventListener("submit", function(e){
   e.preventDefault()
-
   const payload = [...new FormData(formToDo)]
 
-  
-  function CreateToDo(){
+  function createToDo(){
     this.title = payload[0][1]
     this.description = payload[1][1]
     this.date = payload[2][1]
     this.priority = payload[3][1]
   }
-  let todo = new CreateToDo()
+  let todo = new createToDo()
   localStorage.setItem(`todo${Number(localStorage.getItem("indexToDo"))}`, JSON.stringify(todo))
   let indexToDo = Number(localStorage.getItem("indexToDo"))+1
   localStorage.setItem("indexToDo", indexToDo.toString())
-  location.reload()
   sessionStorage.setItem("reloaded", "true")
+  ClosePopup()
 })

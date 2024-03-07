@@ -225,7 +225,6 @@ body{
   height: 0.6em;
   display: none;
   box-shadow: inset 1em 1em #3ba395;
-  background-image: url(images/check.png);
 }
 .todo__checkbox:checked::before{
   display: block;
