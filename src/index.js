@@ -5,6 +5,7 @@ const hideDiv = document.querySelector(".hide")
 const container = document.querySelector(".container")
 const formToDo = document.querySelector("#form-ToDo")
 
+alert("Hello!")
 function ClosePopup(){
   popUp.classList.add("invisible")
   hideDiv.classList.add("invisible")
